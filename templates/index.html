@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #E6F2FF;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="submit"] {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #B3D7FF;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #99C6FF;
+        }
+        .results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Percentage Calculator</h1>
+    <form method="post">
+        Date: <input type="text" name="date"><br>
+        Interviewer: <input type="text" name="interviewer"><br>
+        Total: <input type="text" name="total"><br>
+        Men: <input type="text" name="men"><br>
+        Women: <input type="text" name="women"><br>
+        <input type="submit" value="Calculate">
+    </form>
+
+    {% if total %}
+    <div class="results">
+        <h2>Results</h2>
+        <p>Date: {{ date }}</p>
+        <p>Interviewer: {{ interviewer }}</p>
+        <p>Total: {{ total }}</p>
+        <p>Men: {{ men }} ({{ men_percentage }}%)</p>
+        <p>Women: {{ women }} ({{ women_percentage }}%)</p>
+    </div>
+    {% endif %}
+</body>
+</html>
